@@ -7,6 +7,7 @@
   --clr-accent1-default: hsl(238, 52%, 63%);
   --clr-accent1-light: hsl(238, 52%, 83%);
   --clr-accent1-dark: hsl(238, 52%, 43%);
+  --clr-text: hsl(0, 0%, 100%);
   --br: 1.25em;
 }
 
@@ -30,7 +31,7 @@ body {
   margin: 0;
   font-family: "Quicksand", sans-serif;
   font-size: 1.25em;
-  color: white;
+  color: var(--clr-text);
   background-color: var(--clr-accent1-default);
 }
 
@@ -100,7 +101,7 @@ nav a:focus {
 }
 
 a:is(:link, :visited, :hover, :active) {
-  color: hsl(0, 0%, 100%);
+  color: var(--clr-text);
   text-decoration: none;
 }
 
@@ -110,9 +111,11 @@ h1 {
 
 .button {
   display: inline-block;
+  margin: 1rem;
   padding: 2rem;
   background-color: var(--clr-accent1-default);
   border-radius: var(--br);
+  box-shadow: 0 0 2rem 0.25rem rgba(0, 0, 0, 0.2);
 }
 
 ::-webkit-scrollbar {
