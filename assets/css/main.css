@@ -1,19 +1,130 @@
 @charset "UTF-8";
 
 :root {
-    
+  --clr-main-default: hsl(174, 72%, 56%);
+  --clr-main-light: hsl(174, 72%, 76%);
+  --clr-main-dark: hsl(174, 72%, 36%);
+  --clr-accent1-default: hsl(238, 52%, 63%);
+  --clr-accent1-light: hsl(238, 52%, 83%);
+  --clr-accent1-dark: hsl(238, 52%, 43%);
+  --br: 1.25em;
 }
 
 @font-face {
-    font-family: "Quicksand";
-    src: url(../fonts/Quicksand-VariableFont_wght.ttf) format("truetype");
+  font-family: "Quicksand";
+  src: url("../fonts/Quicksand-VariableFont_wght.ttf") format("truetype");
+  font-weight: 300 700;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap;
 }
 
 html {
-    margin: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  /* Firefox scrollbar styling */
+  scrollbar-color: var(--clr-main-light) var(--clr-accent1-default);
 }
 
 body {
-    margin: 0;
-    font-family: "Quicksand", sans-serif;
+  margin: 0;
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.25em;
+  color: white;
+  background-color: var(--clr-accent1-default);
+}
+
+main {
+  display: grid;
+  place-items: center;
+}
+
+section {
+  width: 100%;
+}
+
+.section1 {
+  height: calc(100vh - 5.25em);
+  background: linear-gradient(
+    to bottom,
+    var(--clr-accent1-default),
+    var(--clr-main-light)
+  );
+}
+
+.section2 {
+  height: 100vh;
+  background: linear-gradient(
+    to top,
+    var(--clr-accent1-default),
+    var(--clr-main-light)
+  );
+}
+
+.section3 {
+  height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    var(--clr-accent1-default),
+    var(--clr-main-light)
+  );
+}
+
+.container {
+  padding: 3rem;
+  margin: 20vh 15vw 2rem 15vw;
+  border-radius: var(--br);
+  box-shadow: 0 0 2rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+nav {
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  background-color: var(--clr-main-default);
+  border-radius: 0 0 var(--br) var(--br);
+}
+
+nav a {
+  display: inline-block;
+  padding: 1.25em;
+  margin: 1rem;
+  font-weight: 550;
+  border-radius: var(--br);
+}
+
+nav a:hover,
+nav a:active,
+nav a:focus {
+  background-color: var(--clr-main-dark);
+}
+
+a:is(:link, :visited, :hover, :active) {
+  color: hsl(0, 0%, 100%);
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+.button {
+  display: inline-block;
+  padding: 2rem;
+  background-color: var(--clr-accent1-default);
+  border-radius: var(--br);
+}
+
+::-webkit-scrollbar {
+  width: 1em;
+  height: 1em;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--clr-accent1-default);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--clr-main-light);
+  border-radius: var(--br);
 }

@@ -1,0 +1,5 @@
+# Enforce LF line endings.
+* text=auto eol=lf
+
+# Isolate binary files in case they get marked as text files.
+*.{png,jpg,jpeg,gif,webp,woff,woff2} binary
