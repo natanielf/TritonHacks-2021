@@ -137,6 +137,16 @@ h1::before {
   box-shadow: 0 0 2rem 0.25rem hsla(0, 0%, 0%, 0.2);
 }
 
+div:target {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(
+    to top,
+    var(--clr-accent1-default),
+    var(--clr-main-light)
+  );
+}
+
 ::-webkit-scrollbar {
   width: 1em;
   height: 1em;
