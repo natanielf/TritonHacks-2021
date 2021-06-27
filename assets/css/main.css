@@ -8,6 +8,7 @@
   --clr-accent1-light: hsl(238, 52%, 83%);
   --clr-accent1-dark: hsl(238, 52%, 43%);
   --clr-text: hsl(0, 0%, 100%);
+  --clr-text-transparent: hsla(0, 0%, 100%, 0.75);
   --br: 1.25em;
 }
 
@@ -75,7 +76,7 @@ section {
   padding: 3rem;
   margin: 20vh 15vw 2rem 15vw;
   border-radius: var(--br);
-  box-shadow: 0 0 2rem 1rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 2rem 1rem hsla(0, 0%, 0%, 0.2);
 }
 
 nav {
@@ -109,13 +110,31 @@ h1 {
   font-size: 3em;
 }
 
+h1::before {
+  content: "> ";
+  color: var(--clr-text-transparent);
+}
+
 .button {
   display: inline-block;
   margin: 1rem;
   padding: 2rem;
   background-color: var(--clr-accent1-default);
   border-radius: var(--br);
-  box-shadow: 0 0 2rem 0.25rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 2rem 0.25rem hsla(0, 0%, 0%, 0.2);
+}
+
+.scroll-to-top-button {
+  display: block;
+  position: fixed;
+  padding: 2rem 2.5rem 1.5rem 2.5rem;
+  bottom: 2em;
+  right: 2em;
+  text-align: center;
+  font-weight: 700;
+  background-color: var(--clr-main-dark);
+  border-radius: var(--br);
+  box-shadow: 0 0 2rem 0.25rem hsla(0, 0%, 0%, 0.2);
 }
 
 ::-webkit-scrollbar {
