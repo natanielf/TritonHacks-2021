@@ -54,7 +54,7 @@ main {
 }
 
 section {
-  width: 100%;
+  width: 100vw;
 }
 
 .section1 {
@@ -85,8 +85,8 @@ section {
 }
 
 .container {
-  width: clamp(30ch, 50%, 50ch);
-  padding: 3rem;
+  width: clamp(22ch, 50%, 50ch);
+  padding: 2rem;
   display: block;
   margin: 15vh auto 0 auto;
   border-radius: var(--br);
@@ -108,7 +108,7 @@ nav {
 
 nav a {
   display: inline-block;
-  padding: 1.25em;
+  padding: 1em;
   margin: 1rem;
   font-weight: 550;
   border-radius: var(--br);
