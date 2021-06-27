@@ -17,8 +17,9 @@
   --clr-text-transparent: hsla(0, 0%, 100%, 0.75);
   --br: 1.25em;
   --animation-length: 8s;
-  --core-diameter: 20vw;
-  --outer-diameter: 30vw;
+  --core-diameter: 25vmin;
+  --outer-min-diameter: 45vmin;
+  --outer-max-diameter: 65vmin;
   --preferences-panel-height: 3rem;
   --preferences-panel-height-hover: 11.75rem;
   --app-height: calc(100vh - var(--preferences-panel-height));
@@ -168,6 +169,7 @@ h1::before {
   height: 0;
   display: none;
   position: relative;
+  animation: app-background 10s ease-in-out 0s infinite alternate;
 }
 
 #app:target {
@@ -205,8 +207,8 @@ h1::before {
 .breathing-indicator-outer {
   display: block;
   background-color: var(--clr-text-transparent);
-  width: var(--outer-diameter);
-  height: var(--outer-diameter);
+  width: var(--outer-min-diameter);
+  height: var(--outer-min-diameter);
   animation: breathe var(--animation-length) ease-in-out 0s infinite alternate;
   animation-play-state: running;
 }
@@ -256,12 +258,12 @@ h1::before {
 
 @keyframes breathe {
   from {
-    width: 30vw;
-    height: 30vw;
+    width: var(--outer-min-diameter);
+    height: var(--outer-min-diameter);
   }
   to {
-    width: 50vw;
-    height: 50vw;
+    width: var(--outer-max-diameter);
+    height: var(--outer-max-diameter);
   }
 }
 
