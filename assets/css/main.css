@@ -7,6 +7,12 @@
   --clr-accent1-default: hsl(238, 52%, 63%);
   --clr-accent1-light: hsl(238, 52%, 83%);
   --clr-accent1-dark: hsl(238, 52%, 43%);
+  --clr-accent2-default: hsl(290, 57%, 70%);
+  --clr-accent2-light: hsl(290, 57%, 90%);
+  --clr-accent2-dark: hsl(290, 57%, 50%);
+  --clr-accent3-default: hsl(341, 100%, 75%);
+  --clr-accent3-light: hsl(341, 100%, 95%);
+  --clr-accent3-dark: hsl(341, 100%, 55%);
   --clr-text: hsl(0, 0%, 100%);
   --clr-text-transparent: hsla(0, 0%, 100%, 0.75);
   --br: 1.25em;
@@ -33,7 +39,6 @@ body {
   font-family: "Quicksand", sans-serif;
   font-size: 1.25em;
   color: var(--clr-text);
-  background-color: var(--clr-accent1-default);
 }
 
 main {
@@ -58,7 +63,7 @@ section {
   height: 100vh;
   background: linear-gradient(
     to top,
-    var(--clr-accent1-default),
+    var(--clr-accent2-default),
     var(--clr-main-light)
   );
 }
@@ -67,16 +72,21 @@ section {
   height: 100vh;
   background: linear-gradient(
     to bottom,
-    var(--clr-accent1-default),
-    var(--clr-main-light)
+    var(--clr-accent2-default),
+    var(--clr-accent1-dark)
   );
 }
 
 .container {
   padding: 3rem;
-  margin: 20vh 15vw 2rem 15vw;
+  margin: 20vh 15vw 0 15vw;
   border-radius: var(--br);
   box-shadow: 0 0 2rem 1rem hsla(0, 0%, 0%, 0.2);
+}
+
+.navbar {
+  width: 100%;
+  background-color: var(--clr-accent1-default);
 }
 
 nav {
@@ -137,7 +147,11 @@ h1::before {
   box-shadow: 0 0 2rem 0.25rem hsla(0, 0%, 0%, 0.2);
 }
 
-div:target {
+#app {
+  height: 0;
+}
+
+#app:target {
   width: 100%;
   height: 100vh;
   background: linear-gradient(
@@ -146,6 +160,8 @@ div:target {
     var(--clr-main-light)
   );
 }
+
+/* Chromium scrollbar styling */
 
 ::-webkit-scrollbar {
   width: 1em;
