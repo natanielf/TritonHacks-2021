@@ -54,7 +54,7 @@ main {
 }
 
 section {
-  width: 100vw;
+  width: 100%;
 }
 
 .section1 {
@@ -195,22 +195,30 @@ h1::before {
 .breathing-indicator-outer {
   border-radius: 50%;
   position: absolute;
+  display: block;
 }
 
 .breathing-indicator-core {
-  display: block;
   background-color: var(--clr-text-transparent);
   width: var(--core-diameter);
   height: var(--core-diameter);
 }
 
 .breathing-indicator-outer {
-  display: block;
   background-color: var(--clr-text-transparent);
   width: var(--outer-min-diameter);
   height: var(--outer-min-diameter);
   animation: breathe var(--animation-length) ease-in-out 0s infinite alternate;
   animation-play-state: running;
+}
+
+.breathe-in-out-title {
+  position: absolute;
+  top: 3vh;
+  padding: 0.25rem 1.5rem;
+  background-color: var(--clr-accent3-default);
+  border-radius: var(--br);
+  animation: breathe-title 8s ease-out 0s 1 forwards;
 }
 
 .preferences-panel {
@@ -265,6 +273,15 @@ h1::before {
   to {
     width: var(--outer-max-diameter);
     height: var(--outer-max-diameter);
+  }
+}
+
+@keyframes breathe-title {
+  0%, 80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0
   }
 }
 
