@@ -1,9 +1,6 @@
+let isPaused = false;
 const root = document.documentElement;
 
-const breatingIndicator = document.querySelector(".breathing-indicator");
-const breathingIndicatorCore = document.querySelector(
-  ".breathing-indicator-core"
-);
 const breathingIndicatorOuter = document.querySelector(
   ".breathing-indicator-outer"
 );
@@ -11,23 +8,11 @@ const breathingIndicatorOuter = document.querySelector(
 const playPauseBtn = document.getElementById("play-pause");
 playPauseBtn.addEventListener("click", function () {
   isPaused = !isPaused;
-  if (isPaused) {
-    playPauseBtn.textContent = "play";
-  } else {
-    playPauseBtn.textContent = "pause";
-  }
-  breatheInAndOut();
+  breathingIndicatorOuter.style.animationPlayState = isPaused
+    ? "paused"
+    : "running";
+  playPauseBtn.innerHTML = isPaused ? "play" : "pause";
 });
-
-const playPause = () => {
-  if (isPaused) {
-    breathingIndicatorOuter.setAttribute('class', 'playing');
-    breathingIndicatorOuter.removeAttribute('class', 'paused');
-  } else {
-    breathingIndicatorOuter.setAttribute('class', 'paused');
-    breathingIndicatorOuter.removeAttribute('class', 'playing');
-  }
-};
 
 const speedLabel = document.querySelector(".speed-label p");
 

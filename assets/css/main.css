@@ -208,6 +208,7 @@ h1::before {
   width: var(--outer-diameter);
   height: var(--outer-diameter);
   animation: breathe var(--animation-length) ease-in-out 0s infinite alternate;
+  animation-play-state: running;
 }
 
 .preferences-panel {
@@ -262,14 +263,6 @@ h1::before {
     width: 50vw;
     height: 50vw;
   }
-}
-
-.playing {
-  animation-play-state: running;
-}
-
-.paused {
-  animation-play-state: paused;
 }
 
 /* Chromium scrollbar styling */
