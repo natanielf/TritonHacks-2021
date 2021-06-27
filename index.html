@@ -49,9 +49,20 @@
     <a class="scroll-to-top-button" href="#top">^</a>
     <div id="app">
       <div class="breathing-indicator">
-        <div class="breating-indicator-core"></div>
+        <div class="breathing-indicator-core"></div>
         <div class="breathing-indicator-outer"></div>
+        <div class="preferences-panel">
+          <p class="preferences-title">preferences</p>
+          <div class="preferences-container">
+            <div class="button" id="play-pause">pause</div>
+            <div class="speed-label">
+              <p>speed</p>
+              <input type="range" min="4" max="10" step="1" id="speed-input" />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>
